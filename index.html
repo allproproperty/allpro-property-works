@@ -420,19 +420,19 @@
       <div class="form-grid">
         <div class="form-group full">
           <label for="name">Name</label>
-          <input type="text" id="name" placeholder="Jane Smith">
+          <input type="text" id="name" name="name" placeholder="Jane Smith">
         </div>
         <div class="form-group">
           <label for="phone">Phone / Text</label>
-          <input type="tel" id="phone" placeholder="(561) 000-0000">
+          <input type="tel" id="phone" name="phone" placeholder="(561) 000-0000">
         </div>
         <div class="form-group">
           <label for="email">Email Address</label>
-          <input type="email" id="email" placeholder="jane@example.com">
+          <input type="email" id="email" name="email" placeholder="jane@example.com">
         </div>
         <div class="form-group full">
           <label for="ptype">Property Type</label>
-          <select id="ptype">
+          <select id="ptype" name="property_type">
             <option value="">Select...</option>
             <option>Residential – Home</option>
             <option>Residential – Condo/Apt</option>
@@ -443,11 +443,11 @@
         </div>
         <div class="form-group full">
           <label for="preferred">Preferred Date &amp; Time</label>
-          <input type="text" id="preferred" placeholder="e.g. Tomorrow morning, ASAP, Friday afternoon...">
+          <input type="text" id="preferred" name="preferred_time" placeholder="e.g. Tomorrow morning, ASAP, Friday afternoon...">
         </div>
         <div class="form-group full">
           <label for="urgency">Need Same Day Service?</label>
-          <select id="urgency">
+          <select id="urgency" name="same_day">
             <option value="">Select...</option>
             <option>Yes – as soon as possible</option>
             <option>Not urgent – flexible schedule</option>
@@ -455,7 +455,7 @@
         </div>
         <div class="form-group full">
           <label for="desc">Describe the Issue</label>
-          <textarea id="desc" placeholder="Please describe what needs to be repaired or serviced..."></textarea>
+          <textarea id="desc" name="message" placeholder="Please describe what needs to be repaired or serviced..."></textarea>
         </div>
       </div>
       <button class="form-submit" type="submit">📅 Submit Appointment Request</button>
