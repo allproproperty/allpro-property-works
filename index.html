@@ -23,930 +23,213 @@
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Barlow', sans-serif;
-    color: var(--text);
-    background: var(--white);
-    overflow-x: hidden;
-  }
+  body { font-family: 'Barlow', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
 
   /* NAV */
   nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: rgba(255,255,255,0.97);
-    backdrop-filter: blur(10px);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 5%;
-    height: 72px;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.97); backdrop-filter: blur(10px);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%; height: 72px;
     border-bottom: 1px solid var(--border);
-    box-shadow: 0 1px 12px rgba(0,0,0,0.06);
-    transition: box-shadow 0.2s;
+    box-shadow: 0 1px 12px rgba(0,0,0,0.06); transition: box-shadow 0.2s;
   }
-
   .nav-logo img { height: 46px; display: block; }
-
   .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
-
-  .nav-links a {
-    color: var(--text-mid);
-    text-decoration: none;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
-
+  .nav-links a { color: var(--text-mid); text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
   .nav-links a:hover { color: var(--orange); }
-
-  .nav-cta {
-    background: var(--orange) !important;
-    color: #fff !important;
-    padding: 10px 22px;
-    border-radius: 4px;
-    transition: background 0.2s !important;
-    box-shadow: 0 2px 10px rgba(232,114,12,0.25);
-  }
-
+  .nav-cta { background: var(--orange) !important; color: #fff !important; padding: 10px 22px; border-radius: 4px; transition: background 0.2s !important; box-shadow: 0 2px 10px rgba(232,114,12,0.25); }
   .nav-cta:hover { background: var(--orange-dark) !important; }
 
   /* HERO */
   .hero {
-    min-height: 100vh;
-    background: #f8f9fb;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
+    min-height: 100vh; background: #f8f9fb;
+    display: flex; align-items: center; position: relative; overflow: hidden;
     padding: 120px 5% 80px;
   }
-
   .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 55% 70% at 100% 50%, rgba(232,114,12,0.06) 0%, transparent 65%),
-      radial-gradient(ellipse 40% 50% at 0% 80%, rgba(30,47,63,0.04) 0%, transparent 60%);
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 55% 70% at 100% 50%, rgba(232,114,12,0.06) 0%, transparent 65%),
+                radial-gradient(ellipse 40% 50% at 0% 80%, rgba(30,47,63,0.04) 0%, transparent 60%);
   }
-
-  .hero::after {
-    content: '';
-    position: absolute;
-    top: 0; right: 0; bottom: 0;
-    width: 42%;
-    background: linear-gradient(160deg, #eff1f5 0%, #e6e9ef 100%);
-    clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%);
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 600px;
-  }
-
+  .hero-content { position: relative; z-index: 2; max-width: 600px; }
   .hero-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--orange-light);
-    border: 1px solid rgba(232,114,12,0.22);
-    color: var(--orange-dark);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 12px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    padding: 6px 14px;
-    border-radius: 3px;
-    margin-bottom: 22px;
-    animation: fadeUp 0.5s ease both;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--orange-light); border: 1px solid rgba(232,114,12,0.22); color: var(--orange-dark);
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 6px 14px; border-radius: 3px; margin-bottom: 22px; animation: fadeUp 0.5s ease both;
   }
-
-  .hero-eyebrow .dot {
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    background: var(--orange);
-    flex-shrink: 0;
-  }
-
-  .hero h1 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900;
-    font-size: clamp(44px, 6.5vw, 76px);
-    line-height: 1.0;
-    color: var(--navy);
-    text-transform: uppercase;
-    letter-spacing: -0.01em;
-    margin-bottom: 22px;
-    animation: fadeUp 0.5s ease 0.08s both;
-  }
-
+  .hero-eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--orange); flex-shrink: 0; }
+  .hero h1 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(44px, 6.5vw, 76px); line-height: 1.0; color: var(--navy); text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 22px; animation: fadeUp 0.5s ease 0.08s both; }
   .hero h1 .accent { color: var(--orange); }
   .hero h1 .light { color: var(--text-light); font-weight: 600; }
+  .hero-divider { width: 52px; height: 3px; background: var(--orange); border-radius: 2px; margin-bottom: 22px; animation: fadeUp 0.5s ease 0.14s both; }
+  .hero-sub { font-size: 17px; color: var(--text-mid); line-height: 1.7; margin-bottom: 36px; max-width: 480px; animation: fadeUp 0.5s ease 0.18s both; }
+  .hero-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; animation: fadeUp 0.5s ease 0.24s both; }
+  .pill { display: flex; align-items: center; gap: 7px; background: var(--white); border: 1px solid var(--border); color: var(--text-mid); font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 100px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+  .pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--orange); flex-shrink: 0; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; animation: fadeUp 0.5s ease 0.3s both; }
 
-  .hero-divider {
-    width: 52px; height: 3px;
-    background: var(--orange);
-    border-radius: 2px;
-    margin-bottom: 22px;
-    animation: fadeUp 0.5s ease 0.14s both;
+  /* Hero image panel */
+  .hero-visual {
+    position: absolute; right: 0; top: 0; bottom: 0; width: 42%; z-index: 3;
+    clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%); overflow: hidden;
   }
+  .hero-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-  .hero-sub {
-    font-size: 17px;
-    color: var(--text-mid);
-    line-height: 1.7;
-    margin-bottom: 36px;
-    max-width: 480px;
-    animation: fadeUp 0.5s ease 0.18s both;
-  }
-
-  .hero-pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 40px;
-    animation: fadeUp 0.5s ease 0.24s both;
-  }
-
-  .pill {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    background: var(--white);
-    border: 1px solid var(--border);
-    color: var(--text-mid);
-    font-size: 13px;
-    font-weight: 600;
-    padding: 7px 14px;
-    border-radius: 100px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-  }
-
-  .pill .dot {
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    background: var(--orange);
-    flex-shrink: 0;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-    animation: fadeUp 0.5s ease 0.3s both;
-  }
-
+  /* BUTTONS */
   .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--orange);
-    color: #fff;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 15px 30px;
-    border-radius: 4px;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--orange); color: #fff; font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 15px 30px; border-radius: 4px; text-decoration: none; border: none; cursor: pointer;
     transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
     box-shadow: 0 3px 14px rgba(232,114,12,0.28);
   }
-
-  .btn-primary:hover {
-    background: var(--orange-dark);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(232,114,12,0.34);
-  }
-
+  .btn-primary:hover { background: var(--orange-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(232,114,12,0.34); }
   .btn-outline {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: transparent;
-    color: var(--navy);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 15px 30px;
-    border-radius: 4px;
-    text-decoration: none;
-    border: 1.5px solid var(--border);
-    cursor: pointer;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent; color: var(--navy); font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 15px 30px; border-radius: 4px; text-decoration: none; border: 1.5px solid var(--border); cursor: pointer;
     transition: border-color 0.2s, color 0.2s;
   }
-
   .btn-outline:hover { border-color: var(--orange); color: var(--orange); }
 
-  .hero-visual {
-    position: absolute;
-    right: 0; top: 0; bottom: 0;
-    width: 42%;
-    z-index: 3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%);
-  }
-
-  .hero-visual img {
-    width: 60%;
-    max-width: 290px;
-    opacity: 0.93;
-    filter: drop-shadow(0 8px 28px rgba(30,47,63,0.1));
-    animation: fadeUp 0.6s ease 0.35s both;
-  }
-
   /* TRUST BAR */
-  .trust-bar {
-    background: var(--navy);
-    padding: 20px 5%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-  }
-
-  .trust-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: rgba(255,255,255,0.85);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-  }
-
-  .trust-icon {
-    width: 28px; height: 28px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
+  .trust-bar { background: var(--navy); padding: 20px 5%; display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+  .trust-item { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85); font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.07em; text-transform: uppercase; }
+  .trust-icon { width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .trust-divider { width: 1px; height: 22px; background: rgba(255,255,255,0.15); }
 
   /* SECTIONS */
-  section { padding: 88px 5%; }
-
-  .section-label {
-    display: inline-block;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--orange);
-    margin-bottom: 10px;
-  }
-
-  .section-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 800;
-    font-size: clamp(30px, 3.8vw, 48px);
-    text-transform: uppercase;
-    line-height: 1.07;
-    color: var(--navy);
-    margin-bottom: 14px;
-  }
-
-  .section-desc {
-    font-size: 16px;
-    color: var(--text-light);
-    line-height: 1.7;
-    max-width: 540px;
-    margin-bottom: 48px;
-  }
+  section { padding: 56px 5%; }
+  .section-label { display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; }
+  .section-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: clamp(30px, 3.8vw, 48px); text-transform: uppercase; line-height: 1.07; color: var(--navy); margin-bottom: 14px; }
+  .section-desc { font-size: 16px; color: var(--text-light); line-height: 1.7; max-width: 540px; margin-bottom: 36px; }
 
   /* HIGHLIGHTS */
   .highlights { background: var(--light-gray); }
-
-  .highlights-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 72px;
-    align-items: center;
-  }
-
-  .highlight-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
-  .hcard {
-    background: var(--white);
-    border-radius: 8px;
-    padding: 28px 22px;
-    border: 1px solid var(--border);
-    border-top: 3px solid var(--orange);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
+  .highlights-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  .highlight-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .hcard { background: var(--white); border-radius: 8px; padding: 24px 20px; border: 1px solid var(--border); border-top: 3px solid var(--orange); transition: transform 0.2s, box-shadow 0.2s; }
   .hcard:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.08); }
+  .hcard-icon { font-size: 24px; margin-bottom: 10px; }
+  .hcard h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px; text-transform: uppercase; color: var(--navy); margin-bottom: 5px; }
+  .hcard p { font-size: 13px; color: var(--text-light); line-height: 1.55; }
 
-  .hcard-icon { font-size: 26px; margin-bottom: 12px; }
-
-  .hcard h3 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    text-transform: uppercase;
-    color: var(--navy);
-    margin-bottom: 6px;
-  }
-
-  .hcard p { font-size: 13.5px; color: var(--text-light); line-height: 1.55; }
+  /* About photo */
+  .about-photo { width: 100%; border-radius: 10px; overflow: hidden; margin-top: 28px; }
+  .about-photo img { width: 100%; height: 260px; object-fit: cover; display: block; border-radius: 10px; }
 
   /* SAME DAY BANNER */
   .sameday-banner {
-    background: var(--navy);
-    padding: 60px 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
-    position: relative;
-    overflow: hidden;
+    background: var(--navy); padding: 52px 5%;
+    display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap;
+    position: relative; overflow: hidden;
   }
-
-  .sameday-banner::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: var(--orange);
-  }
-
-  .sameday-text h2 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900;
-    font-size: clamp(34px, 4.5vw, 58px);
-    text-transform: uppercase;
-    color: var(--white);
-    line-height: 1.0;
-  }
-
+  .sameday-banner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--orange); }
+  .sameday-text h2 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(34px, 4.5vw, 58px); text-transform: uppercase; color: var(--white); line-height: 1.0; }
   .sameday-text h2 span { color: var(--orange); }
   .sameday-text p { color: rgba(255,255,255,0.6); font-size: 15px; margin-top: 10px; }
-
   .sameday-stats { display: flex; gap: 40px; flex-wrap: wrap; }
-
   .stat-block { text-align: center; }
-
-  .stat-num {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900;
-    font-size: 44px;
-    color: var(--orange);
-    line-height: 1;
-  }
-
-  .stat-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: rgba(255,255,255,0.45);
-    margin-top: 4px;
-  }
+  .stat-num { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 44px; color: var(--orange); line-height: 1; }
+  .stat-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.45); margin-top: 4px; }
 
   /* SERVICES */
   .services { background: var(--white); }
-
-  .services-group-header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 16px 22px;
-    background: var(--light-gray);
-    border: 1px solid var(--border);
-    border-left: 4px solid var(--navy);
-    border-radius: 6px;
-    margin-bottom: 20px;
-  }
-
-  .services-group-header h3 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 17px;
-    text-transform: uppercase;
-    color: var(--navy);
-    letter-spacing: 0.03em;
-  }
-
+  .services-group-header { display: flex; align-items: center; gap: 14px; padding: 14px 20px; background: var(--light-gray); border: 1px solid var(--border); border-left: 4px solid var(--navy); border-radius: 6px; margin-bottom: 16px; }
+  .services-group-header h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; text-transform: uppercase; color: var(--navy); letter-spacing: 0.03em; }
   .services-group-header.coordinated { border-left-color: var(--orange); }
-
-  .badge-tag {
-    margin-left: auto;
-    background: var(--navy);
-    color: #fff;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border-radius: 3px;
-    white-space: nowrap;
-  }
-
+  .badge-tag { margin-left: auto; background: var(--navy); color: #fff; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; white-space: nowrap; }
   .badge-tag.orange { background: var(--orange); }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(195px, 1fr)); gap: 12px; margin-bottom: 36px; }
+  .service-card { background: var(--light-gray); border: 1px solid var(--border); border-radius: 6px; padding: 20px 16px; transition: background 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s; }
+  .service-card:hover { background: var(--white); border-color: var(--orange); transform: translateY(-2px); box-shadow: 0 4px 18px rgba(0,0,0,0.07); }
+  .service-card-icon { font-size: 20px; margin-bottom: 8px; }
+  .service-card h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; text-transform: uppercase; color: var(--navy); margin-bottom: 4px; }
+  .service-card p { font-size: 12.5px; color: var(--text-light); line-height: 1.5; }
 
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 14px;
-    margin-bottom: 44px;
-  }
-
-  .service-card {
-    background: var(--light-gray);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 24px 18px;
-    transition: background 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-  }
-
-  .service-card:hover {
-    background: var(--white);
-    border-color: var(--orange);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
-  }
-
-  .service-card-icon { font-size: 22px; margin-bottom: 10px; }
-
-  .service-card h4 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    text-transform: uppercase;
-    color: var(--navy);
-    margin-bottom: 4px;
-  }
-
-  .service-card p { font-size: 13px; color: var(--text-light); line-height: 1.5; }
+  /* GALLERY */
+  .gallery-strip { padding: 0 5% 52px; background: var(--white); }
+  .gallery-strip-label { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; display: block; }
+  .gallery-strip-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 28px; text-transform: uppercase; color: var(--navy); margin-bottom: 20px; }
+  .gallery-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 10px; height: 260px; }
+  .gallery-grid img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block; }
+  .gallery-grid img:first-child { border-radius: 10px; }
 
   /* TEXT CTA */
-  .text-cta {
-    background: var(--orange);
-    padding: 64px 5%;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .text-cta::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      -55deg,
-      transparent,
-      transparent 22px,
-      rgba(255,255,255,0.04) 22px,
-      rgba(255,255,255,0.04) 24px
-    );
-  }
-
-  .text-cta h2 {
-    position: relative;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900;
-    font-size: clamp(30px, 4.5vw, 54px);
-    text-transform: uppercase;
-    color: var(--white);
-    margin-bottom: 10px;
-  }
-
-  .text-cta p {
-    position: relative;
-    font-size: 17px;
-    color: rgba(255,255,255,0.82);
-    margin-bottom: 30px;
-  }
-
-  .btn-white {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--white);
-    color: var(--orange);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 800;
-    font-size: 17px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 16px 40px;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: transform 0.15s, box-shadow 0.15s;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-  }
-
+  .text-cta { background: var(--orange); padding: 56px 5%; text-align: center; position: relative; overflow: hidden; }
+  .text-cta::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(-55deg, transparent, transparent 22px, rgba(255,255,255,0.04) 22px, rgba(255,255,255,0.04) 24px); }
+  .text-cta h2 { position: relative; font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(30px, 4.5vw, 54px); text-transform: uppercase; color: var(--white); margin-bottom: 10px; }
+  .text-cta p { position: relative; font-size: 17px; color: rgba(255,255,255,0.82); margin-bottom: 28px; }
+  .btn-white { position: relative; display: inline-flex; align-items: center; gap: 8px; background: var(--white); color: var(--orange); font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; padding: 16px 40px; border-radius: 4px; text-decoration: none; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
   .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.2); }
 
   /* BOOKING */
   .booking { background: var(--light-gray); }
-
-  .booking-inner {
-    display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    gap: 64px;
-    align-items: start;
-  }
-
-  .contact-items { margin-top: 32px; display: flex; flex-direction: column; gap: 18px; }
-
+  .booking-inner { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: start; }
+  .contact-items { margin-top: 28px; display: flex; flex-direction: column; gap: 16px; }
   .contact-item { display: flex; align-items: flex-start; gap: 14px; }
-
-  .contact-icon {
-    width: 42px; height: 42px;
-    background: var(--navy);
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    font-size: 17px;
-  }
-
-  .contact-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 10px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--gray);
-    margin-bottom: 3px;
-  }
-
-  .contact-value {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--navy);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
+  .contact-icon { width: 42px; height: 42px; background: var(--navy); border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 17px; }
+  .contact-label { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gray); margin-bottom: 3px; }
+  .contact-value { font-size: 15px; font-weight: 600; color: var(--navy); text-decoration: none; transition: color 0.2s; }
   .contact-value:hover { color: var(--orange); }
-
-  .text-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #edf7ed;
-    border: 1px solid #b5d8b5;
-    color: #2a6b2a;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 12px;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    padding: 9px 16px;
-    border-radius: 100px;
-    margin-top: 26px;
-  }
+  .text-badge { display: inline-flex; align-items: center; gap: 8px; background: #edf7ed; border: 1px solid #b5d8b5; color: #2a6b2a; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.07em; text-transform: uppercase; padding: 9px 16px; border-radius: 100px; margin-top: 22px; }
+  .booking-photo { margin-top: 24px; border-radius: 10px; overflow: hidden; }
+  .booking-photo img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; display: block; }
 
   /* FORM */
-  .booking-form {
-    background: var(--white);
-    border-radius: 10px;
-    padding: 42px 38px;
-    box-shadow: 0 4px 32px rgba(0,0,0,0.07);
-    border: 1px solid var(--border);
-  }
-
-  .form-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 800;
-    font-size: 26px;
-    text-transform: uppercase;
-    color: var(--navy);
-    margin-bottom: 6px;
-  }
-
-  .form-sub { font-size: 13.5px; color: var(--text-light); margin-bottom: 26px; }
-
+  .booking-form { background: var(--white); border-radius: 10px; padding: 38px 34px; box-shadow: 0 4px 32px rgba(0,0,0,0.07); border: 1px solid var(--border); }
+  .form-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 26px; text-transform: uppercase; color: var(--navy); margin-bottom: 6px; }
+  .form-sub { font-size: 13.5px; color: var(--text-light); margin-bottom: 24px; }
   .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-
   .form-group { display: flex; flex-direction: column; gap: 5px; }
   .form-group.full { grid-column: 1 / -1; }
-
-  label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 600;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-light);
-  }
-
-  input, select, textarea {
-    font-family: 'Barlow', sans-serif;
-    font-size: 14.5px;
-    color: var(--text);
-    background: var(--light-gray);
-    border: 1.5px solid var(--border);
-    border-radius: 5px;
-    padding: 11px 14px;
-    outline: none;
-    transition: border-color 0.2s, background 0.2s;
-    width: 100%;
-  }
-
-  input:focus, select:focus, textarea:focus {
-    border-color: var(--orange);
-    background: #fff;
-  }
-
+  label { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); }
+  input, select, textarea { font-family: 'Barlow', sans-serif; font-size: 14.5px; color: var(--text); background: var(--light-gray); border: 1.5px solid var(--border); border-radius: 5px; padding: 11px 14px; outline: none; transition: border-color 0.2s, background 0.2s; width: 100%; }
+  input:focus, select:focus, textarea:focus { border-color: var(--orange); background: #fff; }
   textarea { resize: vertical; min-height: 96px; }
-
-  .form-submit {
-    margin-top: 18px;
-    width: 100%;
-    background: var(--orange);
-    color: #fff;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 800;
-    font-size: 17px;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    padding: 17px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.15s;
-    box-shadow: 0 3px 14px rgba(232,114,12,0.22);
-  }
-
+  .form-submit { margin-top: 18px; width: 100%; background: var(--orange); color: #fff; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 17px; letter-spacing: 0.07em; text-transform: uppercase; padding: 17px; border: none; border-radius: 5px; cursor: pointer; transition: background 0.2s, transform 0.15s; box-shadow: 0 3px 14px rgba(232,114,12,0.22); }
   .form-submit:hover { background: var(--orange-dark); transform: translateY(-1px); }
-
   .form-note { font-size: 11.5px; color: var(--text-light); text-align: center; margin-top: 10px; }
-
-  .success-msg {
-    display: none;
-    background: #edf7ed;
-    border: 1.5px solid #b5d8b5;
-    color: #1b5e20;
-    border-radius: 6px;
-    padding: 14px 18px;
-    font-size: 14.5px;
-    font-weight: 500;
-    margin-top: 14px;
-    text-align: center;
-  }
+  .success-msg { display: none; background: #edf7ed; border: 1.5px solid #b5d8b5; color: #1b5e20; border-radius: 6px; padding: 14px 18px; font-size: 14.5px; font-weight: 500; margin-top: 14px; text-align: center; }
 
   /* FOOTER */
-  footer {
-    background: var(--navy);
-    color: rgba(255,255,255,0.55);
-    padding: 52px 5% 28px;
-  }
-
-  .footer-inner {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-bottom: 44px;
-  }
-
+  footer { background: var(--navy); color: rgba(255,255,255,0.55); padding: 48px 5% 28px; }
+  .footer-inner { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-bottom: 40px; }
   .footer-logo img { height: 52px; margin-bottom: 12px; display: block; }
   .footer-logo p { font-size: 13px; max-width: 250px; line-height: 1.65; }
-
-  .footer-col h4 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--white);
-    margin-bottom: 16px;
-  }
-
+  .footer-col h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--white); margin-bottom: 16px; }
   .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
-
-  .footer-col a {
-    color: rgba(255,255,255,0.5);
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.2s;
-  }
-
+  .footer-col a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 14px; transition: color 0.2s; }
   .footer-col a:hover { color: var(--orange); }
-
   .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin-bottom: 20px; }
-
-  .footer-bottom {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
+  .footer-bottom { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
   .footer-copy { font-size: 12.5px; color: rgba(255,255,255,0.35); }
+  .footer-disclaimer { font-size: 11px; color: rgba(255,255,255,0.28); max-width: 520px; line-height: 1.5; text-align: right; font-style: italic; }
 
-  .footer-disclaimer {
-    font-size: 11px;
-    color: rgba(255,255,255,0.28);
-    max-width: 520px;
-    line-height: 1.5;
-    text-align: right;
-    font-style: italic;
-  }
-
-  /* IMAGE PLACEHOLDERS */
-  .img-placeholder {
-    background: var(--mid-gray);
-    border: 2px dashed var(--border);
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color: var(--text-light);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 600;
-    font-size: 13px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .img-placeholder svg { opacity: 0.4; }
-
-  .img-placeholder .ph-label {
-    font-size: 11px;
-    color: var(--gray);
-    letter-spacing: 0.1em;
-    text-align: center;
-    padding: 0 16px;
-    line-height: 1.5;
-  }
-
-  .img-placeholder .ph-size {
-    font-size: 10px;
-    color: rgba(0,0,0,0.28);
-    letter-spacing: 0.05em;
-    font-weight: 500;
-    font-family: 'Barlow', sans-serif;
-    font-style: italic;
-    margin-top: 2px;
-  }
-
-  /* Hero background image slot */
-  .hero-bg-placeholder {
-    position: absolute;
-    top: 0; right: 0; bottom: 0;
-    width: 42%;
-    z-index: 1;
-    clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%);
-    border-radius: 0;
-    border: none;
-    background: #e4e8ef;
-  }
-
-  .hero-bg-placeholder::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(160deg, rgba(240,243,248,0.5) 0%, rgba(220,226,236,0.3) 100%);
-  }
-
-  .hero-bg-placeholder .ph-inner {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    z-index: 2;
-    padding-left: 10%;
-  }
-
-  /* About photo */
-  .about-photo {
-    width: 100%;
-    height: 420px;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .about-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  /* Work gallery strip */
-  .gallery-strip {
-    padding: 0 5% 72px;
-    background: var(--white);
-  }
-
-  .gallery-strip-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--orange);
-    margin-bottom: 14px;
-    display: block;
-  }
-
-  .gallery-strip-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 800;
-    font-size: 28px;
-    text-transform: uppercase;
-    color: var(--navy);
-    margin-bottom: 24px;
-  }
-
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    gap: 12px;
-    height: 280px;
-  }
-
-  .gallery-grid .img-placeholder { height: 100%; border-radius: 8px; }
-  .gallery-grid .img-placeholder:first-child { border-radius: 10px; }
-
-  /* Booking sidebar image */
-  .booking-photo {
-    width: 100%;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-top: 28px;
-  }
-
-  .booking-photo .img-placeholder { height: 200px; border-radius: 8px; }
-
-  @media (max-width: 900px) {
-    .hero-bg-placeholder { display: none; }
-    .gallery-grid { grid-template-columns: 1fr 1fr; height: auto; }
-    .gallery-grid .img-placeholder { height: 180px; }
-    .about-photo { height: 280px; }
-  }
-
-  @media (max-width: 600px) {
-    .gallery-grid { grid-template-columns: 1fr; }
-    .gallery-grid .img-placeholder { height: 200px; }
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 
   @media (max-width: 900px) {
     .nav-links { display: none; }
-    .hero::after, .hero-visual { display: none; }
-    .highlights-inner, .booking-inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero-visual { display: none; }
+    .highlights-inner, .booking-inner { grid-template-columns: 1fr; gap: 36px; }
     .form-grid { grid-template-columns: 1fr; }
     .footer-inner { flex-direction: column; }
     .footer-disclaimer { text-align: left; }
     .sameday-banner { flex-direction: column; }
     .trust-divider { display: none; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; height: auto; }
+    .gallery-grid img { height: 180px; }
   }
-
   @media (max-width: 600px) {
     .highlight-cards { grid-template-columns: 1fr; }
     .booking-form { padding: 28px 20px; }
     .sameday-stats { gap: 24px; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .gallery-grid img { height: 200px; }
   }
 </style>
 </head>
@@ -955,7 +238,7 @@
 <!-- NAV -->
 <nav id="mainNav">
   <a href="#" class="nav-logo">
-    <img src="/mnt/user-data/uploads/ALL_PRO__1_.png" alt="All Pro Property Works">
+    <img src="logo.png" alt="All Pro Property Works">
   </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
@@ -968,15 +251,8 @@
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-content">
-    <div class="hero-eyebrow">
-      <span class="dot"></span>
-      Same Day Service Available
-    </div>
-    <h1>
-      Florida's Trusted<br>
-      <span class="accent">Property</span><br>
-      <span class="light">Repair Experts.</span>
-    </h1>
+    <div class="hero-eyebrow"><span class="dot"></span>Same Day Service Available</div>
+    <h1>Florida's Trusted<br><span class="accent">Property</span><br><span class="light">Repair Experts.</span></h1>
     <div class="hero-divider"></div>
     <p class="hero-sub">Professional handyman and contractor-coordinated services for residential and commercial properties throughout mid to south Florida.</p>
     <div class="hero-pills">
@@ -990,48 +266,30 @@
       <a href="tel:5612239059" class="btn-outline">📞 561-223-9059</a>
     </div>
   </div>
-  <!-- HERO IMAGE: Replace src with your own photo (recommended: exterior of a home or property in Florida, landscape orientation) -->
-  <div class="hero-bg-placeholder img-placeholder">
-    <div class="ph-inner">
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#8a8f98" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-      <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.1em;color:#8a8f98;text-transform:uppercase;">Hero Photo</span>
-      <span class="ph-size">Suggested: Florida home or property exterior<br>~1200 × 900px, landscape</span>
-    </div>
+  <div class="hero-visual">
+    <img src="hero.png" alt="Florida property">
   </div>
 </section>
-<!-- TO USE: Replace the div above with:
-  <div class="hero-visual">
-    <img src="YOUR-IMAGE-FILE.jpg" alt="Description" style="width:100%;height:100%;object-fit:cover;">
-  </div>
--->
 
 <!-- TRUST BAR -->
 <div class="trust-bar">
   <div class="trust-item">
-    <div class="trust-icon">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-    </div>
+    <div class="trust-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
     Licensed &amp; Insured
   </div>
   <div class="trust-divider"></div>
   <div class="trust-item">
-    <div class="trust-icon">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-    </div>
+    <div class="trust-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
     Same Day Repairs
   </div>
   <div class="trust-divider"></div>
   <div class="trust-item">
-    <div class="trust-icon">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-    </div>
+    <div class="trust-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
     Text Us Anytime 24/7
   </div>
   <div class="trust-divider"></div>
   <div class="trust-item">
-    <div class="trust-icon">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-    </div>
+    <div class="trust-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
     Residential &amp; Commercial
   </div>
 </div>
@@ -1043,40 +301,16 @@
       <span class="section-label">Who We Are</span>
       <h2 class="section-title">Mid to South Florida's Property Maintenance Professionals</h2>
       <p class="section-desc">All Pro Property Works delivers dependable repairs and full-service property maintenance to homeowners and businesses throughout Florida. We move fast — often arriving the same day — and coordinate licensed trades so you only need one call.</p>
-
-      <!-- ABOUT PHOTO: Replace with your own image (team photo, job site, or truck) -->
       <div class="about-photo">
-        <div class="img-placeholder" style="height:220px;">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#8a8f98" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <span class="ph-label">About / Team Photo</span>
-          <span class="ph-size">Team, truck, or job site photo — ~800 × 500px</span>
-        </div>
+        <img src="about.png" alt="All Pro Property Works team">
       </div>
-      <!-- TO USE: Replace the div above with: <img src="YOUR-PHOTO.jpg" alt="Our team" style="width:100%;border-radius:8px;margin-top:28px;"> -->
-
       <a href="#schedule" class="btn-primary" style="margin-top:28px;display:inline-flex;">Request Service Today</a>
     </div>
     <div class="highlight-cards">
-      <div class="hcard">
-        <div class="hcard-icon">⚡</div>
-        <h3>Same Day Repairs</h3>
-        <p>Don't wait days for a fix. We prioritize fast dispatch so your property stays in top shape.</p>
-      </div>
-      <div class="hcard">
-        <div class="hcard-icon">💬</div>
-        <h3>Text Us 24/7</h3>
-        <p>Message us any time of day or night. We're always reachable via text at 561-223-9059.</p>
-      </div>
-      <div class="hcard">
-        <div class="hcard-icon">🏢</div>
-        <h3>Commercial Ready</h3>
-        <p>From offices to retail spaces, we handle commercial properties with the same care as residential.</p>
-      </div>
-      <div class="hcard">
-        <div class="hcard-icon">🏠</div>
-        <h3>Residential Experts</h3>
-        <p>Your home deserves quality workmanship. We treat every home like it's our own.</p>
-      </div>
+      <div class="hcard"><div class="hcard-icon">⚡</div><h3>Same Day Repairs</h3><p>Don't wait days for a fix. We prioritize fast dispatch so your property stays in top shape.</p></div>
+      <div class="hcard"><div class="hcard-icon">💬</div><h3>Text Us 24/7</h3><p>Message us any time of day or night. We're always reachable via text at 561-223-9059.</p></div>
+      <div class="hcard"><div class="hcard-icon">🏢</div><h3>Commercial Ready</h3><p>From offices to retail spaces, we handle commercial properties with the same care as residential.</p></div>
+      <div class="hcard"><div class="hcard-icon">🏠</div><h3>Residential Experts</h3><p>Your home deserves quality workmanship. We treat every home like it's our own.</p></div>
     </div>
   </div>
 </section>
@@ -1088,18 +322,9 @@
     <p>Call or text us — same day availability for most repairs across mid to south Florida.</p>
   </div>
   <div class="sameday-stats">
-    <div class="stat-block">
-      <div class="stat-num">24/7</div>
-      <div class="stat-label">Text Support</div>
-    </div>
-    <div class="stat-block">
-      <div class="stat-num">~1hr</div>
-      <div class="stat-label">Avg. Response</div>
-    </div>
-    <div class="stat-block">
-      <div class="stat-num">Same<br>Day</div>
-      <div class="stat-label">Often Available</div>
-    </div>
+    <div class="stat-block"><div class="stat-num">24/7</div><div class="stat-label">Text Support</div></div>
+    <div class="stat-block"><div class="stat-num">~1hr</div><div class="stat-label">Avg. Response</div></div>
+    <div class="stat-block"><div class="stat-num">Same<br>Day</div><div class="stat-label">Often Available</div></div>
   </div>
   <a href="sms:5612239059" class="btn-primary">💬 Text Us Now</a>
 </div>
@@ -1116,14 +341,17 @@
     <span class="badge-tag">Direct Service</span>
   </div>
   <div class="services-grid">
-    <div class="service-card"><div class="service-card-icon">🚪</div><h4>Door Repair &amp; Install</h4><p>Interior, exterior, sliding doors &amp; more.</p></div>
+    <div class="service-card"><div class="service-card-icon">🚪</div><h4>Door Repair &amp; Install</h4><p>Interior and exterior door repairs, installation, and hardware replacement.</p></div>
     <div class="service-card"><div class="service-card-icon">🪟</div><h4>Window Repair</h4><p>Screens, locks, seals, and frame repairs.</p></div>
     <div class="service-card"><div class="service-card-icon">🖌️</div><h4>Painting &amp; Touch-Ups</h4><p>Interior and exterior painting services.</p></div>
     <div class="service-card"><div class="service-card-icon">🪣</div><h4>Drywall &amp; Patching</h4><p>Holes, cracks, texture matching &amp; more.</p></div>
     <div class="service-card"><div class="service-card-icon">🪜</div><h4>Assembly &amp; Mounting</h4><p>Furniture, TVs, shelves, and fixtures.</p></div>
-    <div class="service-card"><div class="service-card-icon">🔩</div><h4>General Repairs</h4><p>Miscellaneous home and office repairs.</p></div>
-    <div class="service-card"><div class="service-card-icon">🏡</div><h4>Property Maintenance</h4><p>Recurring upkeep for homes &amp; businesses.</p></div>
+    <div class="service-card"><div class="service-card-icon">🔩</div><h4>General Repairs</h4><p>Residential and commercial repairs including flooring installation, replacement, and repairs.</p></div>
+    <div class="service-card"><div class="service-card-icon">🏡</div><h4>Property Maintenance</h4><p>Recurring upkeep including gutter cleaning, tree trimming, and appliance exhaust cleaning.</p></div>
     <div class="service-card"><div class="service-card-icon">🛁</div><h4>Caulking &amp; Sealing</h4><p>Bathrooms, kitchens, and exterior gaps.</p></div>
+    <div class="service-card"><div class="service-card-icon">💧</div><h4>Leak Mitigation</h4><p>Professional installation of water diversion systems to protect your property from moisture intrusion and damage.</p></div>
+    <div class="service-card"><div class="service-card-icon">🟦</div><h4>Acoustical Ceiling Tiles</h4><p>Replacement and repair of drop ceiling and acoustical tile systems.</p></div>
+    <div class="service-card"><div class="service-card-icon">🧹</div><h4>Cleaning Services</h4><p>Pressure washing, house scrubbing, and exterior surface cleaning for residential and commercial properties.</p></div>
   </div>
 
   <div class="services-group-header coordinated">
@@ -1132,42 +360,24 @@
     <span class="badge-tag orange">Via Licensed Contractors</span>
   </div>
   <div class="services-grid">
-    <div class="service-card"><div class="service-card-icon">💡</div><h4>Electrical Work</h4><p>Outlets, panels, lighting &amp; wiring — via licensed electricians.</p></div>
-    <div class="service-card"><div class="service-card-icon">🚿</div><h4>Plumbing</h4><p>Leaks, fixtures, drains &amp; installs — via licensed plumbers.</p></div>
-    <div class="service-card"><div class="service-card-icon">❄️</div><h4>HVAC Services</h4><p>AC repair, maintenance &amp; installs — via licensed HVAC techs.</p></div>
-    <div class="service-card"><div class="service-card-icon">🏗️</div><h4>Structural Work</h4><p>Larger renovations coordinated through licensed GCs.</p></div>
+    <div class="service-card"><div class="service-card-icon">💡</div><h4>Electrical Work</h4><p>New construction, remodels, indoor/outdoor lighting &amp; retrofitting, stand-by systems, generators, motors, camera &amp; security systems — via licensed electricians.</p></div>
+    <div class="service-card"><div class="service-card-icon">🚿</div><h4>Plumbing</h4><p>Leaks, fixtures, drains, installs, septic pumping, hot water heater replacements &amp; repairs — via licensed plumbers.</p></div>
+    <div class="service-card"><div class="service-card-icon">❄️</div><h4>HVAC Services</h4><p>AC repair, maintenance &amp; installs — via licensed HVAC technicians.</p></div>
+    <div class="service-card"><div class="service-card-icon">🏗️</div><h4>Structural Work</h4><p>Larger renovations coordinated through licensed general contractors.</p></div>
+    <div class="service-card"><div class="service-card-icon">🐀</div><h4>Pest Control</h4><p>Raccoon removal, rodent control, and wildlife exclusion services — via licensed pest control professionals.</p></div>
   </div>
 </section>
 
-<!-- WORK GALLERY: Add up to 4 job photos here — before/after shots, completed projects, etc. -->
+<!-- WORK GALLERY -->
 <section class="gallery-strip">
   <span class="gallery-strip-label">Our Work</span>
   <h2 class="gallery-strip-title">Recent Projects</h2>
   <div class="gallery-grid">
-    <div class="img-placeholder">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8a8f98" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-      <span class="ph-label">Featured Project Photo</span>
-      <span class="ph-size">~800 × 600px</span>
-    </div>
-    <div class="img-placeholder">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8a8f98" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-      <span class="ph-label">Job Photo 2</span>
-      <span class="ph-size">~600 × 600px</span>
-    </div>
-    <div class="img-placeholder">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8a8f98" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-      <span class="ph-label">Job Photo 3</span>
-      <span class="ph-size">~600 × 600px</span>
-    </div>
-    <div class="img-placeholder">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8a8f98" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-      <span class="ph-label">Job Photo 4</span>
-      <span class="ph-size">~600 × 600px</span>
-    </div>
+    <img src="1.png" alt="Recent project">
+    <img src="2.png" alt="Recent project">
+    <img src="3.png" alt="Recent project">
+    <img src="4.png" alt="Recent project">
   </div>
-  <!-- TO USE: Replace each <div class="img-placeholder">...</div> with:
-    <img src="YOUR-PHOTO.jpg" alt="Job description" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
-  -->
 </section>
 
 <!-- TEXT CTA -->
@@ -1187,50 +397,30 @@
       <div class="contact-items" id="contact">
         <div class="contact-item">
           <div class="contact-icon">📞</div>
-          <div>
-            <div class="contact-label">Phone</div>
-            <a href="tel:5612239059" class="contact-value">561-223-9059</a>
-          </div>
+          <div><div class="contact-label">Phone</div><a href="tel:5612239059" class="contact-value">561-223-9059</a></div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">✉️</div>
-          <div>
-            <div class="contact-label">Email</div>
-            <a href="mailto:info@propertyproswork.com" class="contact-value">info@propertyproswork.com</a>
-          </div>
+          <div><div class="contact-label">Email</div><a href="mailto:info@propertyproswork.com" class="contact-value">info@propertyproswork.com</a></div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">📍</div>
-          <div>
-            <div class="contact-label">Service Area</div>
-            <span class="contact-value" style="cursor:default;">Mid to South Florida</span>
-          </div>
+          <div><div class="contact-label">Service Area</div><span class="contact-value" style="cursor:default;">Mid to South Florida</span></div>
         </div>
       </div>
       <div class="text-badge">💬 We accept texts 24/7 at 561-223-9059</div>
-
-      <!-- BOOKING SIDEBAR PHOTO: A friendly team or property photo works well here -->
       <div class="booking-photo">
-        <div class="img-placeholder" style="height:190px;margin-top:28px;">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8a8f98" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <span class="ph-label">Team or Property Photo</span>
-          <span class="ph-size">~700 × 400px, landscape</span>
-        </div>
+        <img src="schedule.png" alt="All Pro Property Works">
       </div>
-      <!-- TO USE: Replace the div above with: <img src="YOUR-PHOTO.jpg" alt="Our team" style="width:100%;border-radius:8px;margin-top:28px;"> -->
     </div>
 
     <div class="booking-form">
       <div class="form-title">Request a Visit</div>
       <p class="form-sub">Same day appointments often available — just ask!</p>
       <div class="form-grid">
-        <div class="form-group">
-          <label for="fname">First Name</label>
-          <input type="text" id="fname" placeholder="Jane">
-        </div>
-        <div class="form-group">
-          <label for="lname">Last Name</label>
-          <input type="text" id="lname" placeholder="Smith">
+        <div class="form-group full">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Jane Smith">
         </div>
         <div class="form-group">
           <label for="phone">Phone / Text</label>
@@ -1241,10 +431,6 @@
           <input type="email" id="email" placeholder="jane@example.com">
         </div>
         <div class="form-group full">
-          <label for="address">Property Address</label>
-          <input type="text" id="address" placeholder="123 Main St, City, FL">
-        </div>
-        <div class="form-group">
           <label for="ptype">Property Type</label>
           <select id="ptype">
             <option value="">Select...</option>
@@ -1253,21 +439,6 @@
             <option>Commercial – Office</option>
             <option>Commercial – Retail</option>
             <option>Commercial – Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="service">Service Needed</label>
-          <select id="service">
-            <option value="">Select...</option>
-            <option>General Repair</option>
-            <option>Door / Window</option>
-            <option>Painting</option>
-            <option>Drywall / Patching</option>
-            <option>Assembly / Mounting</option>
-            <option>Electrical (Coordinated)</option>
-            <option>Plumbing (Coordinated)</option>
-            <option>HVAC (Coordinated)</option>
-            <option>Other</option>
           </select>
         </div>
         <div class="form-group full">
@@ -1298,7 +469,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">
-      <img src="/mnt/user-data/uploads/ALL_PRO__1_.png" alt="All Pro Property Works">
+      <img src="logo.png" alt="All Pro Property Works">
       <p>Professional handyman and property maintenance services across mid to south Florida.</p>
     </div>
     <div class="footer-col">
@@ -1328,10 +499,10 @@
 
 <script>
   function submitForm() {
-    const fname = document.getElementById('fname').value.trim();
+    const name = document.getElementById('name').value.trim();
     const phone = document.getElementById('phone').value.trim();
     const email = document.getElementById('email').value.trim();
-    if (!fname || (!phone && !email)) {
+    if (!name || (!phone && !email)) {
       alert('Please enter your name and at least a phone number or email address.');
       return;
     }
