@@ -401,7 +401,7 @@
         </div>
         <div class="contact-item">
           <div class="contact-icon">✉️</div>
-          <div><div class="contact-label">Email</div><a href="mailto:info@propertyproswork.com" class="contact-value">info@propertyproswork.com</a></div>
+          <div><div class="contact-label">Email</div><a href="/cdn-cgi/l/email-protection#85ecebe3eac5f5f7eaf5e0f7f1fcf5f7eaf6f2eaf7eeabe6eae8" class="contact-value"><span class="__cf_email__" data-cfemail="d9b0b7bfb699a9abb6a9bcabada0a9abb6aaaeb6abb2f7bab6b4">[email&#160;protected]</span></a></div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">📍</div>
@@ -414,7 +414,7 @@
       </div>
     </div>
 
-    <div class="booking-form">
+    <form class="booking-form" action="https://formspree.io/f/mkopjear" method="POST">
       <div class="form-title">Request a Visit</div>
       <p class="form-sub">Same day appointments often available — just ask!</p>
       <div class="form-grid">
@@ -458,10 +458,9 @@
           <textarea id="desc" placeholder="Please describe what needs to be repaired or serviced..."></textarea>
         </div>
       </div>
-      <button class="form-submit" onclick="submitForm()">📅 Submit Appointment Request</button>
-      <div class="success-msg" id="successMsg">✅ Thank you! We'll be in touch shortly to confirm your appointment.</div>
+      <button class="form-submit" type="submit">📅 Submit Appointment Request</button>
       <p class="form-note">By submitting, you agree to be contacted via phone, text, or email.</p>
-    </div>
+    </form>
   </div>
 </section>
 
@@ -485,7 +484,7 @@
       <ul>
         <li><a href="tel:5612239059">📞 561-223-9059</a></li>
         <li><a href="sms:5612239059">💬 Text Us 24/7</a></li>
-        <li><a href="mailto:info@propertyproswork.com">✉️ info@propertyproswork.com</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#c0a9aea6af80b0b2afb0a5b2b4b9b0b2afb3b7afb2abeea3afad">✉️ <span class="__cf_email__" data-cfemail="b2dbdcd4ddf2c2c0ddc2d7c0c6cbc2c0ddc1c5ddc0d99cd1dddf">[email&#160;protected]</span></a></li>
         <li><a href="#about">📍 Mid–South Florida</a></li>
       </ul>
     </div>
@@ -497,7 +496,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function submitForm() {
     const name = document.getElementById('name').value.trim();
     const phone = document.getElementById('phone').value.trim();
@@ -509,16 +508,4 @@
     document.getElementById('successMsg').style.display = 'block';
     const btn = document.querySelector('.form-submit');
     btn.disabled = true;
-    btn.textContent = '✅ Request Submitted';
-    btn.style.background = '#4caf50';
-    btn.style.boxShadow = 'none';
-    document.getElementById('successMsg').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-
-  window.addEventListener('scroll', () => {
-    document.getElementById('mainNav').style.boxShadow =
-      window.scrollY > 40 ? '0 2px 20px rgba(0,0,0,0.1)' : '0 1px 12px rgba(0,0,0,0.06)';
-  });
-</script>
-</body>
-</html>
+    btn.textContent = '✅ Request Submitted'
